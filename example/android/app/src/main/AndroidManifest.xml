@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.liostech.midtrans_example">
+    package="com.liostech.midtrans_example" xmlns:tools="http://schemas.android.com/tools">
    <application
         android:label="midtrans_example"
-        android:icon="@mipmap/ic_launcher">
+        tools:replace="android:label"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+       >
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

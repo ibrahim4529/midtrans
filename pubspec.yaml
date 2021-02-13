@@ -1,8 +1,8 @@
 name: midtrans
 description: A new flutter plugin project.
 version: 0.0.1
-author:
-homepage:
+homepage: 'https://github.com/ibrahim4529'
+repository: 'https://github.com/ibrahim4529/midtrans'
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

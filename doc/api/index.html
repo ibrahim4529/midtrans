@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 0.32.4">
+  <meta name="description" content="midtrans API docs, for the Dart programming language.">
+  <title>midtrans - Dart API docs</title>
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500,400i,400,300|Source+Sans+Pro:400,300,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+
+</head>
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">midtrans package</li>
+  </ol>
+  <div class="self-name">midtrans</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+  <div id="dartdoc-sidebar-left" class="col-xs-6 col-sm-3 col-md-2 sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+      <form class="search-sidebar" role="search">
+        <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+      </form>
+    </header>
+    
+    <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+      <li class="self-crumb">midtrans package</li>
+    </ol>
+    
+    <h5 class="hidden-xs"><span class="package-name">midtrans</span> <span class="package-kind">package</span></h5>
+    <ol>
+          <li class="section-title">Libraries</li>
+          <li><a href="midtrans/midtrans-library.html">midtrans</a></li>
+    </ol>
+  </div>
+
+  <div id="dartdoc-main-content" class="col-xs-12 col-sm-9 col-md-8 main-content">
+      <section class="desc markdown">
+        <h1 id="midtrans">midtrans</h1>
+<p>Non Official Plugin For Integrate Flutter And Midtrans Mobile Sdk
+This Plugin is running on snap mode in midtrans
+You can red the documentation in this <a href="https://mobile-docs.midtrans.com/">url</a></p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="requirement">Requirement</h3>
+<ul>
+<li>A Client-Key from midtrans Merchant Account</li>
+<li>Merchant Server, A server side implementation is required 
+for Midtrans mobile SDK to work. You can check <a href="http://mobile-docs.midtrans.com/#merchant-server-implementation">the server 
+implementation reference</a> and walk through the API’s that 
+you may need for implementation on your backend server.</li>
+</ul>
+<p>After finish a requirement to use this plugin
+You require to configure your project </p>
+<ul>
+<li>Change AndroidManifest.xml to be like this</li>
+</ul>
+<pre class="language-xml"><code class="language-xml">&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hello_example" xmlns:tools="http://schemas.android.com/tools"&gt;
+   &lt;application
+        android:label="hello_example"
+        android:icon="@mipmap/ic_launcher"
+        tools:replace="android:label"
+        android:theme="@style/AppTheme"
+       &gt;
+        .....
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+<ul>
+<li>Change styles.xml in your project 
+you can find the xml in android/app/src/main/res/values/styles.xml
+To be like this</li>
+</ul>
+<pre class="language-xml"><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off --&gt;
+    &lt;style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar"&gt;
+        &lt;!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame --&gt;
+        &lt;item name="android:windowBackground"&gt;@drawable/launch_background&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;!-- Theme applied to the Android Window as soon as the process has started.
+         This theme determines the color of the Android Window while your
+         Flutter UI initializes, as well as behind your Flutter UI while its
+         running.
+         
+         This Theme is only used starting with V2 of Flutter's Android embedding. --&gt;
+    &lt;style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"&gt;
+        &lt;item name="windowActionBar"&gt;false&lt;/item&gt;
+        &lt;item name="windowNoTitle"&gt;true&lt;/item&gt;
+    &lt;/style&gt;
+    &lt;style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar"&gt;
+        &lt;item name="android:windowBackground"&gt;?android:colorBackground&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you found anny issue you can open issue in github or contact me</p>
+<ul>
+<li>Issue running error on debug mode 
+Error code like this</li>
+</ul>
+<pre class="language-bash"><code class="language-bash">E/AndroidRuntime(28442): java.lang.AssertionError
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncSSLSocketWrapper.write(AsyncSSLSocketWrapper.java:390)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncSSLSocketWrapper.handleHandshakeStatus(AsyncSSLSocketWrapper.java:276)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncSSLSocketWrapper.handshake(AsyncSSLSocketWrapper.java:114)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.http.AsyncSSLSocketMiddleware.tryHandshake(AsyncSSLSocketMiddleware.java:89)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.http.AsyncSSLSocketMiddleware$2.onConnectCompleted(AsyncSSLSocketMiddleware.java:106)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncServer.runLoop(AsyncServer.java:849)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncServer.run(AsyncServer.java:658)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncServer.access$800(AsyncServer.java:44)
+E/AndroidRuntime(28442): 	at com.koushikdutta.async.AsyncServer$14.run(AsyncServer.java:600)
+</code></pre>
+<p>This error cause third party library used bay midtrans mobile sdk 
+to solve this you can run in release mode or change your gradle version
+to version lower or equal to 4.0.2</p>
+<p>To change your gradle version change file in android/build.gradle
+to like this</p>
+<pre class="language-properties"><code class="language-properties">dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        .....
+}
+</code></pre>
+      </section>
+      
+        <section class="summary">
+            <h2>Libraries</h2>
+          <dl>
+            <dt id="midtrans">
+              <span class="name"><a href="midtrans/midtrans-library.html">midtrans</a></span>             
+            </dt>
+            <dd>
+               
+            </dd>
+          </dl>
+        </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="col-xs-6 col-sm-6 col-md-2 sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    midtrans
+      0.0.1
+  </span>
+
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="static-assets/typeahead.bundle.min.js"></script>
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/URI.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+</body>
+
+</html>
